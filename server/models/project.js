@@ -19,6 +19,11 @@ const ProjectSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Suite'
   }],
+  status: {
+    type: String,
+    enum: ['Active', 'Archived'],
+    default: 'Active'
+  },
   createdAt: {
     type: Date,
     default: Date.now

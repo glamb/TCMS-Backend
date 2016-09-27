@@ -43,8 +43,9 @@ function create(req, res, next) {
  */
 function update(req, res, next) {
   const project = req.project;
-  project.name = req.body.name;
-  project.description = req.body.description;
+  if (req.body.name) {project.name = req.body.name;}
+  if (req.body.description) {project.description = req.body.description;}
+  if (req.body.status) {project.status = req.body.status;}
 
   project.saveAsync()
     .then((savedProject) => res.json(savedProject))
