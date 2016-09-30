@@ -27,7 +27,8 @@ function get(req, res) {
 function create(req, res, next) {
   const project = new Project({
     name: req.body.name,
-    description: req.body.description
+    description: req.body.description,
+    img_id: req.body.img_id
   });
 
   project.saveAsync()

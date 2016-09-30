@@ -15,6 +15,10 @@ const ProjectSchema = new mongoose.Schema({
     type: String,
     required: false
   },
+  img_id: {
+    type: Number,
+    default: 0
+  },
   suites: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Suite'
